@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="model"
+            type="com.app.cellstudio.holidayplanner.interactor.model.BestHolidayWithAnnualLeaveModel"/>
+
+        <import type="android.view.View"/>
+        <import type="java.lang.Integer" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/rl_lir_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        android:layout_marginBottom="@dimen/size_8"
+        android:paddingStart="?android:attr/listPreferredItemPaddingStart"
+        android:paddingEnd="?android:attr/listPreferredItemPaddingEnd">
+
+        <FrameLayout
+            android:id ="@+id/fl_lir_date"
+            android:layout_gravity="center_vertical"
+            android:layout_width="@dimen/size_64"
+            android:layout_height="@dimen/size_64">
+
+            <ImageView
+                android:layout_gravity="center_vertical"
+                android:id="@+id/iv_iph_date"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/circle_white"
+                android:contentDescription="@string/todo" />
+
+            <LinearLayout
+                android:layout_gravity="center"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:textColor="@color/white"
+                    android:id="@+id/tv_iph_month"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="-3dp"
+                    android:text="@{ Integer.toString(model.numberOfHolidays) }"
+                    tools:text="9"/>
+
+                <TextView
+                    android:textColor="@color/white"
+                    android:text="@string/days"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-3dp"
+                    tools:text="days" />
+
+            </LinearLayout>
+        </FrameLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="13dp"
+            android:layout_toEndOf="@+id/fl_lir_date"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/tv_lir_holiday_duration_value"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@{ model.durationInString }"
+                android:textAppearance="?android:attr/textAppearanceListItemSmall"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_18"
+                tools:text="2018-10-13 - 2018-10-14" />
+
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_lir_holiday_duration_value">
+
+                <TextView
+                    android:id="@+id/tv_lir_holiday_annual_key_value"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_toEndOf="@+id/tv_lir_holiday_annual_key"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="@{model.leaveDatesInString}"
+                    android:textAppearance="?android:attr/textAppearanceListItemSmall"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_18"
+                    tools:text="2018-10-13, 2018-10-14" />
+
+                <TextView
+                    android:id="@+id/tv_lir_holiday_annual_key"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:text="Leave: "
+                    android:textAppearance="?android:attr/textAppearanceListItemSmall"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_18"
+                    tools:text="Leave: " />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</layout>

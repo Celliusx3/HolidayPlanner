@@ -1,0 +1,17 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.app.cellstudio.holidayplanner.presentation.view.fragment.PublicHolidayFragment">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_public_holiday_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:background="@color/transparent"
+        android:nestedScrollingEnabled="false"
+        tools:listitem="@layout/list_item_public_holiday"
+        tools:targetApi="lollipop"/>
+
+</FrameLayout>

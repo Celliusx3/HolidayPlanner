@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="model"
+            type="com.app.cellstudio.holidayplanner.interactor.model.YearHolidayModel" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:descendantFocusability="blocksDescendants">
+
+        <TextView
+            android:id="@+id/tv_liph_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/spacing_normal"
+            android:layout_alignParentStart="true"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:paddingBottom="@dimen/spacing_normal"
+            android:paddingEnd="@dimen/spacing_large"
+            android:paddingStart="@dimen/spacing_large"
+            android:paddingTop="@dimen/spacing_normal"
+            android:text="@{model.year.toString()}"
+            android:textAppearance="?android:attr/textAppearanceListItemSmall"
+            android:background="?attr/colorPrimary"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_23"
+            tools:text="2018" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_liph_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_liph_title"
+            android:layout_gravity="start"
+            android:layout_marginBottom="@dimen/spacing_tiny"
+            android:nestedScrollingEnabled="false"
+            tools:listitem="@layout/list_item_public_holiday_item"
+            tools:targetApi="lollipop" />
+
+    </RelativeLayout>
+</layout>

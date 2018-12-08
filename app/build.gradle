@@ -1,0 +1,145 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'io.fabric'
+
+android {
+    aaptOptions {
+        cruncherEnabled = false
+    }
+    compileSdkVersion 27
+    buildToolsVersion "27.0.3"
+    defaultConfig {
+        applicationId "com.app.cellstudio.holidayplanner"
+        minSdkVersion 19
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0.0"
+        multiDexEnabled true
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+    buildTypes {
+        debug {
+            debuggable true
+            minifyEnabled false
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        staging.initWith(buildTypes.debug)
+        staging {
+            minifyEnabled true
+            shrinkResources true
+            matchingFallbacks = ['debug', 'release']
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        release {
+            minifyEnabled false
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
+}
+
+dependencies {
+    ext.RX_ANDROID_VERSION = '2.1.0'
+    ext.RX_JAVA_VERSION = '2.2.2'
+    ext.RX_LIFE_CYCLE_VERSION = '2.2.2'
+    ext.DAGGER2_VERSION = '2.14.1'
+    ext.BUTTER_KNIFE_VERSION = '8.8.1'
+    ext.PAPER_PARCEL_VERSION = '2.0.1'
+    ext.GSON_VERSION = '2.8.5'
+    ext.PICASSO_VERSION = '2.5.2'
+    ext.JODA_VERSION = '2.10'
+    ext.OKHTTP_VERSION = '3.7.0'
+    ext.SUPPORT_MULTIDEX_VERSION = '1.0.3'
+    ext.FIREBASE_CORE_VERSION = '16.0.4'
+    ext.CRASHLYTICS_VERSION = '2.9.5'
+    ext.PLAY_SERVICES_ADS_VERSION = '17.0.0'
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    // Android Support libraries
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    api "com.android.support:design:${rootProject.ext.SUPPORT_LIBRARY_VERSION}"
+    api "com.android.support:appcompat-v7:${rootProject.ext.SUPPORT_LIBRARY_VERSION}"
+    api "com.android.support:cardview-v7:${rootProject.ext.SUPPORT_LIBRARY_VERSION}"
+    api "com.android.support:recyclerview-v7:${rootProject.ext.SUPPORT_LIBRARY_VERSION}"
+    api "com.android.support:gridlayout-v7:${rootProject.ext.SUPPORT_LIBRARY_VERSION}"
+    api "com.android.support:support-compat:${rootProject.ext.SUPPORT_LIBRARY_VERSION}"
+    api "com.android.support:support-v4:${rootProject.ext.SUPPORT_LIBRARY_VERSION}"
+    api "com.android.support:support-v13:${rootProject.ext.SUPPORT_LIBRARY_VERSION}"
+    api "com.android.support:customtabs:${rootProject.ext.SUPPORT_LIBRARY_VERSION}"
+    api "com.android.support:support-annotations:${rootProject.ext.SUPPORT_LIBRARY_VERSION}"
+    api "com.android.support:multidex:${SUPPORT_MULTIDEX_VERSION}"
+
+    // Data Binding Compiler - Android Native Data Binding Compiler
+    implementation 'com.android.support:support-v4:27.1.1'
+    kapt "com.android.databinding:compiler:${rootProject.ext.ANDROID_BUILD_TOOLS_VERSION}"
+
+//    // RX - for composing asynchronous and event-based programs using observable sequences
+    implementation "io.reactivex.rxjava2:rxandroid:${RX_ANDROID_VERSION}"
+    implementation "io.reactivex.rxjava2:rxjava:${RX_JAVA_VERSION}"
+
+//    // RX-Life cycle - Lifecycle handling APIs
+    implementation "com.trello.rxlifecycle2:rxlifecycle:${RX_LIFE_CYCLE_VERSION}"
+    implementation "com.trello.rxlifecycle2:rxlifecycle-components:${RX_LIFE_CYCLE_VERSION}"
+
+    // ButterKnife - Bind view using Annotations @BindView, @Click, etc
+    implementation "com.jakewharton:butterknife:${BUTTER_KNIFE_VERSION}"
+    kapt "com.jakewharton:butterknife-compiler:${BUTTER_KNIFE_VERSION}"
+    annotationProcessor "com.jakewharton:butterknife-compiler:${BUTTER_KNIFE_VERSION}"
+
+    // Dagger 2 - Dependency Injection
+    implementation "com.google.dagger:dagger:${DAGGER2_VERSION}"
+    kapt "com.google.dagger:dagger-compiler:${DAGGER2_VERSION}"
+    annotationProcessor "com.google.dagger:dagger-compiler:${DAGGER2_VERSION}"
+
+    // Parcel Annotation - To create Parcelable only with Annotations
+    implementation "nz.bradcampbell:paperparcel:${PAPER_PARCEL_VERSION}"
+    implementation "nz.bradcampbell:paperparcel-kotlin:${PAPER_PARCEL_VERSION}"
+    kapt "nz.bradcampbell:paperparcel-compiler:${PAPER_PARCEL_VERSION}"
+    annotationProcessor "nz.bradcampbell:paperparcel-compiler:${PAPER_PARCEL_VERSION}"
+
+    // Gson
+    implementation "com.google.code.gson:gson:${GSON_VERSION}"
+
+    // Picasso
+    implementation "com.squareup.picasso:picasso:${PICASSO_VERSION}"
+
+    // OkHttp - HTTP Client
+    implementation "com.squareup.okhttp3:okhttp:${OKHTTP_VERSION}"
+    implementation "com.squareup.okhttp3:logging-interceptor:${OKHTTP_VERSION}"
+
+    // Joda
+    implementation "joda-time:joda-time:${JODA_VERSION}"
+
+    // Kotlin - Kotlin Standard Library
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+
+    // Firebase
+    implementation "com.google.firebase:firebase-core:${FIREBASE_CORE_VERSION}"
+
+    // Crashlytics
+    implementation "com.crashlytics.sdk.android:crashlytics:${CRASHLYTICS_VERSION}"
+
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    implementation "com.google.android.gms:play-services-ads:${PLAY_SERVICES_ADS_VERSION}"
+}
+repositories {
+    mavenCentral()
+}
+
+apply plugin: 'com.google.gms.google-services'

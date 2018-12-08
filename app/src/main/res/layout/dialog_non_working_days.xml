@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:id="@+id/rl_nwd_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_nwd_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="16dp"
+            android:text="Please choose non-working days:"
+            android:textColor="@color/secondary_text"
+            android:textSize="18sp" />
+
+        <RelativeLayout
+            android:id="@+id/rl_nwd_checkbox_main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_nwd_title"
+            android:paddingBottom="8dp"
+            android:paddingTop="8dp">
+
+            <CheckBox
+                android:id="@+id/cb_sunday"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:gravity="center_vertical"
+                android:paddingBottom="16dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="16dp"
+                android:paddingTop="16dp"
+                android:text="@string/sunday"
+                android:textSize="16sp" />
+
+            <CheckBox
+                android:id="@+id/cb_monday"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_below="@+id/cb_sunday"
+                android:gravity="center_vertical"
+                android:paddingBottom="16dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="16dp"
+                android:paddingTop="16dp"
+                android:text="@string/monday"
+                android:textSize="16sp" />
+
+            <CheckBox
+                android:id="@+id/cb_tuesday"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_below="@+id/cb_monday"
+                android:gravity="center_vertical"
+                android:paddingBottom="16dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="16dp"
+                android:paddingTop="16dp"
+                android:text="@string/tuesday"
+                android:textSize="16sp" />
+
+            <CheckBox
+                android:id="@+id/cb_wednesday"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_below="@+id/cb_tuesday"
+                android:gravity="center_vertical"
+                android:paddingBottom="16dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="16dp"
+                android:paddingTop="16dp"
+                android:text="@string/wednesday"
+                android:textSize="16sp" />
+
+            <CheckBox
+                android:id="@+id/cb_thursday"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_below="@+id/cb_wednesday"
+                android:gravity="center_vertical"
+                android:paddingBottom="16dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="16dp"
+                android:paddingTop="16dp"
+                android:text="@string/thursday"
+                android:textSize="16sp" />
+
+            <CheckBox
+                android:id="@+id/cb_friday"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_below="@+id/cb_thursday"
+                android:gravity="center_vertical"
+                android:paddingBottom="16dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="16dp"
+                android:paddingTop="16dp"
+                android:text="@string/friday"
+                android:textSize="16sp" />
+
+            <CheckBox
+                android:id="@+id/cb_saturday"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_below="@+id/cb_friday"
+                android:gravity="center_vertical"
+                android:paddingBottom="16dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="16dp"
+                android:paddingTop="16dp"
+                android:text="@string/saturday"
+                android:textSize="16sp" />
+
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/btn_nwd_next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/rl_nwd_checkbox_main"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:paddingBottom="8dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingTop="8dp"
+            android:textAllCaps="true"
+            android:text="@string/continue_txt"
+            android:textColor="@color/indigo_500"
+            android:focusable="true" />
+
+    </RelativeLayout>
+</layout>

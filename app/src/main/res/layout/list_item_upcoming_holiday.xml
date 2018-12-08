@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="model"
+            type="com.app.cellstudio.holidayplanner.interactor.model.HolidayModel"/>
+
+        <import type="android.view.View" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/rl_cuh_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/indigo_600"
+        android:paddingStart="?android:attr/listPreferredItemPaddingStart"
+        android:paddingEnd="?android:attr/listPreferredItemPaddingEnd">
+
+        <TextView
+            android:id="@+id/tv_cuh_upcoming_holiday"
+            android:layout_alignParentStart="true"
+            android:layout_toStartOf="@+id/tv_cuh_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent"
+            android:gravity="center_vertical"
+            android:minHeight="?android:attr/listPreferredItemHeightSmall"
+            android:textAppearance="?android:attr/textAppearanceListItemSmall"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_16"
+            android:text= "@string/upcoming_holiday"
+            tools:text="@string/upcoming_holiday"/>
+
+        <TextView
+            android:id="@+id/tv_cuh_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd = "true"
+            android:background="@color/transparent"
+            android:gravity="center_vertical"
+            android:minHeight="?android:attr/listPreferredItemHeightSmall"
+            android:textAppearance="?android:attr/textAppearanceListItemSmall"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_16"
+            android:text="@{model.remainingDaysFromNow}"
+            tools:text="36 days"/>
+
+        <TextView
+            android:id="@+id/tv_cuh_holiday_title"
+            android:layout_below="@id/tv_cuh_upcoming_holiday"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/indigo_800"
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/size_12"
+            android:paddingEnd="@dimen/size_12"
+            android:layout_marginBottom="@dimen/size_8"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:minHeight="?android:attr/listPreferredItemHeightSmall"
+            android:textAppearance="?android:attr/textAppearanceListItemSmall"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_23"
+            android:text="@{model.title}"
+            tools:text="Malaysia Day"/>
+
+        <TextView
+            android:id="@+id/tv_cuh_holiday_date"
+            android:layout_below="@id/tv_cuh_holiday_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="@dimen/size_8"
+            android:textAppearance="?android:attr/textAppearanceListItemSmall"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_16"
+            android:text="@{model.dateToDisplay}"
+            android:visibility='@{!model.dateToDisplay.equalsIgnoreCase("")? View.VISIBLE : View.GONE}'
+            tools:text="2018-10-10"/>
+
+        <TextView
+            android:id="@+id/tv_cuh_holiday_day_in_a_week"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/tv_cuh_holiday_date"
+            android:layout_marginBottom="@dimen/size_12"
+            android:gravity="center_vertical"
+            android:text="@{model.dayInAWeek}"
+            android:textAppearance="?android:attr/textAppearanceListItemSmall"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_16"
+            android:visibility='@{!model.dayInAWeek.equalsIgnoreCase("")? View.VISIBLE : View.GONE}'
+            tools:text="Saturday" />
+
+    </RelativeLayout>
+
+</layout>

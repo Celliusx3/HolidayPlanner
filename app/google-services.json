@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "1014575295301",
+    "firebase_url": "https://holiday-calendar-38050.firebaseio.com",
+    "project_id": "holiday-calendar-38050",
+    "storage_bucket": "holiday-calendar-38050.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1014575295301:android:116fbf64b54482ea",
+        "android_client_info": {
+          "package_name": "com.app.cellstudio.holidayplanner"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1014575295301-lvvkbbbc53tg3mq4s1tl05k05tpskorm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXqmWNCdoluFMLWNpqnFxARvxIxPwmnuQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

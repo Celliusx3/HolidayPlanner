@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.app.cellstudio.holidayplanner.presentation.view.fragment.HomeFragment">
+
+        <RelativeLayout
+            android:id="@+id/container_today_holiday"
+            android:layout_margin="@dimen/size_8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <include
+                layout="@layout/content_today_holiday"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/container_upcoming_holiday"
+            android:layout_below="@+id/container_today_holiday"
+            android:layout_marginLeft="@dimen/size_8"
+            android:layout_marginRight="@dimen/size_8"
+            android:layout_marginBottom="@dimen/size_8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_upcoming_holidays"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:layout_height="@dimen/size_160"
+                android:nestedScrollingEnabled="false"
+                android:layout_gravity="start"
+                android:background="@color/transparent"
+                tools:listitem="@layout/list_item_upcoming_holiday"
+                tools:targetApi="lollipop" />
+
+        </RelativeLayout>
+
+        <com.google.android.gms.ads.AdView
+            android:id="@+id/av_home_ads"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            ads:adSize="SMART_BANNER"
+            ads:adUnitId="@string/adunit_id">
+        </com.google.android.gms.ads.AdView>
+
+    </RelativeLayout>
+</layout>

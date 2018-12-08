@@ -1,0 +1,18 @@
+[
+  {
+    "title":"Home",
+    "icon":"Home"
+  },
+  {
+    "title": "Holiday",
+    "icon": "Listing"
+  },
+  {
+    "title": "Recommended",
+    "icon": "Star"
+  },
+  {
+    "title":"Settings",
+    "icon":"Settings"
+  }
+]

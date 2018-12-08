@@ -1,0 +1,26 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.app.cellstudio.holidayplanner.interactor.viewmodel.MainViewModel"/>
+    </data>
+
+    <LinearLayout
+        android:id="@+id/ll_im_main"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <include layout="@layout/toolbar" />
+
+        <com.app.cellstudio.holidayplanner.presentation.component.DisableSwipeViewPager
+            android:id="@+id/main_vp_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/transparent" />
+
+    </LinearLayout>
+</layout>
